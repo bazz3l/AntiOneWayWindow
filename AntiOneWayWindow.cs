@@ -2,7 +2,7 @@
 
 namespace Oxide.Plugins
 {
-    [Info("AntiOneWayWindow", "Bazz3l", "1.0.1")]
+    [Info("Anti One Way Window", "Bazz3l", "1.0.1")]
     [Description("Stops items being placed on window embrasures or bars this was creating one way windows.")]
     public class AntiOneWayWindow : CovalencePlugin
     {
