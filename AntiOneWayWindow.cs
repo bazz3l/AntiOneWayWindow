@@ -47,7 +47,7 @@ namespace Oxide.Plugins
             if (!_blockedPrefabs.Contains(target.entity.ShortPrefabName)) 
                 return null;
 
-            if (player == null)
+            if (player != null)
                 player.ChatMessage(Lang("PlacementBlocked", player.UserIDString, target.entity.ShortPrefabName));
 
             return false;
