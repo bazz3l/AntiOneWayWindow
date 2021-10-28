@@ -38,10 +38,10 @@ namespace Oxide.Plugins
         {
             BasePlayer player = planner.GetOwnerPlayer();
             
-            if (prefab.deployable == null || target.entity == null)
+            if (prefab.deployable == null || !prefab.deployable.fullName.Contains("sirenlight.deployed.prefab"))
                 return null;
 
-            if (!prefab.deployable.fullName.Contains("sirenlight.deployed.prefab"))
+            if (target.entity == null)
                 return null;
             
             if (!_blockedPrefabs.Contains(target.entity.ShortPrefabName)) 
