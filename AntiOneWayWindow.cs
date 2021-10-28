@@ -36,8 +36,6 @@ namespace Oxide.Plugins
         
         object CanBuild(Planner planner, Construction prefab, Construction.Target target)
         {
-            BasePlayer player = planner.GetOwnerPlayer();
-            
             if (prefab.deployable == null || !prefab.deployable.fullName.Contains("sirenlight.deployed.prefab"))
                 return null;
 
@@ -46,6 +44,8 @@ namespace Oxide.Plugins
             
             if (!_blockedPrefabs.Contains(target.entity.ShortPrefabName)) 
                 return null;
+            
+            BasePlayer player = planner.GetOwnerPlayer();
 
             if (player != null)
                 player.ChatMessage(Lang("PlacementBlocked", player.UserIDString, target.entity.ShortPrefabName));
